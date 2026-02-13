@@ -4,4 +4,6 @@
   </Folder>
   <Project Path="BSL.StairDrawing/BSL.StairDrawing.csproj" Id="2516fc60-338e-4bf4-ab87-3937094b4c5d" />
   <Project Path="StairDrawingTests/StairDrawingTests.csproj" Id="7fb16a5d-89d0-4ccc-9ac5-93df51e1df64" />
+  <Project Path="tekla-core/ATS.TeklaCore/ATS.TeklaCore.csproj" Id="62e33809-7858-4cda-8fc9-c1796ab0f67c" />
+  <Project Path="tekla-core/authorization/Authorization/Authorization.csproj" Id="2b0f2bab-e263-42ec-9367-7b7dc7b08394" />
 </Solution>

@@ -1,0 +1,3 @@
+[submodule "tekla-core"]
+	path = tekla-core
+	url = git@github.com:Alsode/tekla-core.git
