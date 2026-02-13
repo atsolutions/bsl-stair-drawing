@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <LangVersion>10.0</LangVersion>
+	  <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Tekla.Structures" />
+    <PackageReference Include="Tekla.Structures.Datatype" />
+    <PackageReference Include="Tekla.Structures.Dialog" />
+    <PackageReference Include="Tekla.Structures.Model" />
+    <PackageReference Include="Tekla.Structures.Plugins" />
+  </ItemGroup>
+
+	
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy $(TargetDir)BSL.LiftingHoles.dll &quot;C:\ProgramData\Trimble\Tekla Structures\2022.0\Environments\common\extensions\BSL\&quot;  /R /Y&#xD;&#xA;xcopy $(TargetDir)Authorization.dll &quot;C:\ProgramData\Trimble\Tekla Structures\2022.0\Environments\common\extensions\BSL\&quot;  /R /Y&#xD;&#xA;xcopy $(TargetDir)ATS.TeklaCore.dll &quot;C:\ProgramData\Trimble\Tekla Structures\2022.0\Environments\common\extensions\BSL\&quot;  /R /Y&#xD;&#xA;&#xD;&#xA;" />
+	</Target>
+
+</Project>

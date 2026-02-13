@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <!-- Enable Central Package Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Single source of truth for Tekla version -->
+    <TeklaVersion>2022.0.10715</TeklaVersion>
+    <NoWarn>$(NoWarn);NU1008</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Core Tekla packages -->
+    <PackageVersion Include="MSTest.TestAdapter" Version="4.1.0" />
+    <PackageVersion Include="MSTest.TestFramework" Version="4.1.0" />
+    <PackageVersion Include="Tekla.Structures" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Datatype" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Model" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Drawing" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Geometry3d" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Plugins" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Catalogs" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Analysis" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Structures.Dialog" Version="$(TeklaVersion)" />
+    <!-- UI / Extensions (only if used) -->
+    <PackageVersion Include="Tekla.UI" Version="$(TeklaVersion)" />
+    <PackageVersion Include="Tekla.Application.Library" Version="$(TeklaVersion)" />
+    <PackageVersion Include="xunit" Version="2.6.6" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.7" />
+  </ItemGroup>
+</Project>
