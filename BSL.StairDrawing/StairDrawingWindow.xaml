@@ -1,0 +1,47 @@
+﻿<tsd:ApplicationWindowBase x:Class="BSL.StairDrawing.StairDrawingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BSL.StairDrawing"
+        xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+        xmlns:tsui="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+        xmlns:core="clr-namespace:ATS.TeklaCore.Views;assembly=ATS.TeklaCore"
+                           xmlns:viewmodels ="clr-namespace:BSL.StairDrawing.ViewModels"
+        mc:Ignorable="d"
+                           xmlns:tabs="clr-namespace:BSL.StairDrawing.Views.Tabs"
+                           d:DataContext="{d:DesignInstance viewmodels:StairDrawingViewModel, IsDesignTimeCreatable=True}"
+        Title="BSL Stair Drawings" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Fusion;component/Themes/Cloud.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <tsui:WpfSaveLoad Grid.Row="0"></tsui:WpfSaveLoad>
+        <TabControl Grid.Row="1" Margin="5" SelectedIndex="{Binding SelectedTab}">
+            <TabItem Header="Main" IsEnabled="{Binding Authorization.IsAuthorized}">
+                <tabs:MainTab></tabs:MainTab>
+            </TabItem>
+            <TabItem Header="License">
+                <tabs:AuthorizationTab></tabs:AuthorizationTab>
+            </TabItem>
+        </TabControl>
+        
+        <tsui:WpfOkCreateCancel Grid.Row="3" 
+                                CreateClicked="WpfOkCreateCancel_CreateClicked"
+                                OkClicked="WpfOkCreateCancel_OkClicked"
+                                CancelClicked="WpfOkCreateCancel_CancelClicked"></tsui:WpfOkCreateCancel>
+        <core:VersionControl Grid.Row="2" HorizontalAlignment="Right" Name="VersionControl"></core:VersionControl>
+
+    </Grid>
+</tsd:ApplicationWindowBase>

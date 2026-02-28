@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BSL.StairDrawing
+namespace BSL.StairDrawing.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CompanyLogo.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CompanyLogo : UserControl
     {
-        public MainWindow()
+        public CompanyLogo()
         {
             InitializeComponent();
         }

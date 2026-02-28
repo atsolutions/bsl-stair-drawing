@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="BSL.StairDrawing.Views.ChoiceInput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BSL.StairDrawing.Views"
+             xmlns:viewmodels="clr-namespace:BSL.StairDrawing.ViewModels"
+             xmlns:tsui="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewmodels:StairDrawingViewModel, IsDesignTimeCreatable=True}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Create Top Length Dimensions"></Label>
+        <Label Grid.Column="0" Grid.Row="1" Content="Create Top Width Dimensions"></Label>
+        <Label Grid.Column="0" Grid.Row="2" Content="Create Top Bolt Dimensions"></Label>
+        <Label Grid.Column="0" Grid.Row="3" Content="Create Top Angle Bolt Dimensions"></Label>
+
+            <ToggleButton Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateTLengthDim}" Style="{StaticResource ToggleButtonStyle}" />
+        <ToggleButton Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateTopWidthDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+        <ToggleButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateTopBoltDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+        <ToggleButton Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateTopAngleBoltDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+
+
+        <Label Grid.Column="0" Grid.Row="4" Content="Create Front Bolt Dimensions"></Label>
+        <Label Grid.Column="0" Grid.Row="5" Content="Create Front Stringer Dimensions"></Label>
+        <Label Grid.Column="0" Grid.Row="6" Content="Create Front Step Dimensions"></Label>
+        <ToggleButton Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateFrontBoltDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+        <ToggleButton Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateFrontStringerDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+        <ToggleButton Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateFrontStepDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+
+        
+        <Label Grid.Column="0" Grid.Row="7" Content="Create Detail View"></Label>
+        <Label Grid.Column="0" Grid.Row="8" Content="Create Detail Dimensions"></Label>
+        <ToggleButton Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateDetailView}" Style="{StaticResource ToggleButtonStyle}" />
+        <ToggleButton Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding CreateDetailDimensions}" Style="{StaticResource ToggleButtonStyle}" />
+
+        
+        
+
+    </Grid>
+</UserControl>
